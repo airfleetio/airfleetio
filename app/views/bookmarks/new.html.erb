@@ -1,0 +1,52 @@
+<h1>Save a vehicle</h1>
+
+<%= form_with(model: @bookmark, local: true) do |form| %>
+  <% if @bookmark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+        <% @bookmark.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :vin %>
+    <%= form.text_field :vin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vin</th>
+      <th>Year</th>
+      <th>Make</th>
+      <th>Model</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.vin %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.model %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
