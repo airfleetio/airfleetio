@@ -15,3 +15,7 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'  # Speed up local development
   gem 'listen', '>= 3.0.5', '< 3.2'        # Speed up local development
 end
+
+group :test do
+  gem 'rspec-rails', '>= 3.7', '< 4.0'     # Testing framework
+end
