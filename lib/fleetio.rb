@@ -13,8 +13,12 @@ module Fleetio
       @year = params[:year]
     end
 
+    def self.invalid?(params = {})
+      params[:vin].blank? || params[:make].blank? || params[:model].blank?
+    end
+
     def self.all
-      Request.fetch(path: '/vehicles').map do |vehicle_attributes|
+      Request.fetch(path: '/vehicles').reject(&method(:invalid?)).map do |vehicle_attributes|
         new vehicle_attributes
       end
     end
