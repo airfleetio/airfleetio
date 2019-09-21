@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :vehicles
+  resource :fleet, only: %i[show update]
   resources :bookmarks, only: :create
   root to: 'bookmarks#new'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

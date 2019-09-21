@@ -1,0 +1,27 @@
+
+<%= button_to 'Refresh', fleet_path, form_class: 'pull-right', style: 'margin-top: 20px', class: 'sbtn-sm', method: :patch, context: :primary %>
+<h3>You have <%= pluralize @vehicles.size, 'vehicle' %> in your Fleet.io account</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">VIN</th>
+      <th scope="col">Year</th>
+      <th scope="col">Make</th>
+      <th scope="col">Model</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.uuid %></td>
+        <td><%= vehicle.vin %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.model %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
