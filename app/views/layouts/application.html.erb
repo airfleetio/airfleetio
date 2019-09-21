@@ -7,7 +7,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <%= stylesheet_link_tag bootstrap_css %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script defer src="https://cdn.jsdelivr.net/npm/rails-ujs@5.2.2/lib/assets/compiled/rails-ujs.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/turbolinks@5.2.0/dist/turbolinks.min.js"></script>
   <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
   <script data-turbolinks-eval=false>
     var pusher = new Pusher('<%= Pusher.key %>');
@@ -19,7 +20,6 @@
       }
     });
   </script>
-
 </head>
 <body>
   <%= navbar do %>
