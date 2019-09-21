@@ -13,3 +13,16 @@ RSpec.describe Fleetio::Vehicle do
     end
   end
 end
+
+RSpec.describe Fleetio::FuelEntry do
+  describe '.for' do
+    let(:vehicle_id) { Fleetio::Vehicle.all.first.uuid }
+    subject { Fleetio::FuelEntry.for(vehicle_id) }
+
+    it 'returns the list of miles and gallons for the fleet.io vehicle' do
+      expect(subject).to be_an(Array)
+      expect(subject.map(&:miles)).to all be_present.and be_a(Float)
+      expect(subject.map(&:gallons)).to all be_present.and be_a(Float)
+    end
+  end
+end

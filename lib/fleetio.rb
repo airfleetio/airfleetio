@@ -2,6 +2,21 @@ require 'rest-client'
 
 # A basic client for the fleet.io API
 module Fleetio
+  class FuelEntry
+    attr_reader :miles, :gallons
+
+    def initialize(params = {})
+      @miles = params[:meter_entry][:value].to_f
+      @gallons = params[:us_gallons].to_f
+    end
+
+    def self.for(vehicle_id)
+      Request.fetch(path: "/vehicles/#{vehicle_id}/fuel_entries").map do |attributes|
+        new attributes
+      end
+    end
+  end
+
   class Vehicle
     attr_reader :uuid, :vin, :make, :model, :year
 
