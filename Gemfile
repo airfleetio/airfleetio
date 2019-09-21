@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'                   # Faster web application navigation
 gem 'rest-client', '~> 2.1'                # Basic HTTP Client
 gem 'bh', '~> 1.2'                         # Bootstrap helpers
 gem 'turbolinks_render'
+gem 'pusher', '~> 1.3'                     # Websocket publisher
 
 group :development, :test do
   gem 'spring'                             # Speed up local development

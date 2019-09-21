@@ -27,7 +27,7 @@
         <td><%= vehicle.year %></td>
         <td><%= vehicle.make %></td>
         <td><%= vehicle.model %></td>
-        <td><%= format_efficiency(vehicle.efficiency) %></td>
+        <td data-uuid='<%= vehicle.uuid %>'><%= format_efficiency(vehicle.efficiency) %></td>
       </tr>
     <% end %>
   </tbody>

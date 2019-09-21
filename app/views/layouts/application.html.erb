@@ -8,6 +8,18 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <%= stylesheet_link_tag bootstrap_css %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+  <script data-turbolinks-eval=false>
+    var pusher = new Pusher('<%= Pusher.key %>');
+    var channel = pusher.subscribe('efficiency');
+    channel.bind('progress', function(data) {
+      var target = document.querySelector('[data-uuid="' + data.uuid + '"]');
+      if (target != null) {
+        target.innerHTML = '<span class="text-' + data.status + '">' + data.message + '</span>';
+      }
+    });
+  </script>
+
 </head>
 <body>
   <%= navbar do %>
