@@ -12,7 +12,9 @@ class Bookmark
       errors.add :vin, :invalid, message: 'was already saved'
       false
     else
-      vehicle.update bookmarked: true
+      vehicle.update(bookmarked: true).tap do |success|
+        FetchEfficiencyJob.perform_later(vehicle) if success
+      end
     end
   end
 end
