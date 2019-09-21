@@ -8,6 +8,7 @@ class FetchEfficiencyJob < ActiveJob::Base
 
   def perform(vehicle)
     broadcast vehicle, :info, 'Calculating efficiency'
+    sleep 1
     fuel_entries = Fleetio::FuelEntry.for vehicle.uuid
 
     if fuel_entries.size < 2

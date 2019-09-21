@@ -13,7 +13,7 @@ class Bookmark
       false
     else
       vehicle.update(bookmarked_at: Time.current).tap do |success|
-        FetchEfficiencyJob.perform_later(vehicle) if success
+        FetchEfficiencyJob.set(wait: 0.5.seconds).perform_later(vehicle) if success
       end
     end
   end
