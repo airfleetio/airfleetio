@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Airfleet</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <title>Airfleet</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <%= stylesheet_link_tag bootstrap_css %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <%= navbar do %>
+  <% end %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>

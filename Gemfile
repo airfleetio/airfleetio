@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.4.2', require: false # Speed up Rails boot time
 gem 'webpacker', '~> 4.0'                  # Transpile app-like JavaScript
 gem 'turbolinks', '~> 5'                   # Faster web application navigation
 gem 'rest-client', '~> 2.1'                # Basic HTTP Client
+gem 'bh', '~> 1.2'                         # Bootstrap helpers
 
 group :development, :test do
   gem 'spring'                             # Speed up local development
