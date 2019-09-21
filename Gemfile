@@ -12,6 +12,10 @@ gem 'bh', '~> 1.2'                         # Bootstrap helpers
 gem 'turbolinks_render'
 gem 'pusher', '~> 1.3'                     # Websocket publisher
 
+group :production do
+  gem 'sidekiq', '~> 5.0'                  # Background processor
+end
+
 group :development, :test do
   gem 'spring'                             # Speed up local development
   gem 'spring-watcher-listen', '~> 2.0.0'  # Speed up local development
