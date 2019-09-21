@@ -3,5 +3,9 @@ class Vehicle < ApplicationRecord
   validates :vin, uniqueness: true
   validates :year, length: {is: 4}
 
-  scope :bookmarked, -> { where bookmarked: true }
+  scope :bookmarked, -> { where.not(bookmarked_at: nil).order(bookmarked_at: :desc) }
+
+  def bookmarked?
+    bookmarked_at.present?
+  end
 end
