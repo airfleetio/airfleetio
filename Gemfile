@@ -6,7 +6,6 @@ gem 'rails', '~> 6.0.0'                    # Rails framework
 gem 'pg', '>= 0.18', '< 2.0'               # Database for Active Record
 gem 'puma', '~> 3.11'                      # Fast and concurrent web server
 gem 'bootsnap', '>= 1.4.2', require: false # Speed up Rails boot time
-gem 'webpacker', '~> 4.0'                  # Transpile app-like JavaScript
 gem 'turbolinks', '~> 5'                   # Faster web application navigation
 gem 'rest-client', '~> 2.1'                # Basic HTTP Client
 gem 'bh', '~> 1.2'                         # Bootstrap helpers
