@@ -13,7 +13,7 @@ gem 'turbolinks_render'
 gem 'pusher', '~> 1.3'                     # Websocket publisher
 
 group :production do
-  gem 'sidekiq', '~> 5.0'                  # Background processor
+  gem 'sidekiq', '~> 6.4'                  # Background processor
 end
 
 group :development, :test do
